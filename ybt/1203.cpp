@@ -16,25 +16,25 @@ int search(int x){              //从x开始找到第一个左括号
     }
 }
 int main(){
-    while (scanf("%s",a)!=EOF){
-        printf("%s\n",a);
-        memset(aa,' ',sizeof(aa));    //清空aa数组
+    while (scanf("%c",a)!=EOF){
+        printf("%s",a);
+        memset(aa,0,sizeof(aa));    //清空aa数组
         int len=strlen(a);
         for (int i=0;i<len;i++){
             if (a[i]=='('){
                 aa[i]='$';          //将左括号标记为$
             }
             else if (a[i]==')'){
-                int x=search(i-1);  //找最近的左括号
+                int x=search(i-1);  //找到最近的左括号
                 if (x==-1){
                     aa[i]='?';      //找不到左括号，将右括号标记为?
                 }
                 else{
-                    aa[x]=' ';      //找到左括号，将左括号标记为空格
+                    aa[i]=' ';      //将右括号标记为空格
                 }
             }
         }
-        printf("%s\n",aa);
+        cout<<a<<endl<<aa<<endl;
     }
 
     return 0;
