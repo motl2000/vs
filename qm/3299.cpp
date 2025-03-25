@@ -17,5 +17,5 @@ int main(){
         cout<<-1;
     else
         cout<<i;
-
+    return 0;
 }

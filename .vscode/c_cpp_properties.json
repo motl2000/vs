@@ -2,13 +2,23 @@
     "configurations": [
       {
         "name": "Win64",
-        "includePath": ["${workspaceFolder}/**"],
+        "includePath": ["${workspaceFolder}/**",
+                        "${workspaceFolder}/graph/libdll"],
         "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
         "windowsSdkVersion": "10.0.18362.0",
         "compilerPath": "D:/MinGW/bin/g++.exe",
         "cStandard": "c17",
         "cppStandard": "c++17",
-        "intelliSenseMode": "gcc-x64"
+        "intelliSenseMode": "gcc-x64",
+        "browse": {
+                "path": [
+                    "${workspaceFolder}/**",
+                    "${workspaceFolder}/graph/libdll"  // 替换为你的系统库路径
+                    // 其他浏览路径...
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
       }
     ],
     "version": 4
