@@ -1,48 +1,12 @@
 #include <iostream>
- #include <string>
- using namespace std;
+#include <string>
+using namespace std;
  int main() {
-    string n;
-    cin >> n;
-    for (int row = 0; row < 5; row++) {
-        string line = "";
-        for (char digit : n) {
-            if (digit == '0') {
-                if (row == 0 || row == 4) {
-                    line += ".....";
-                } else {
-                    line += ".***.";
-                }
-            } else if (digit == '1') {
-                line += "****.";
-            } else if (digit == '2') {
-                if (row == 0) {
-                    line += ".....";
-                } else if (row == 1) {
-                    line += "****.";
-                } else if (row == 2) {
-                    line += ".....";
-                } else if (row == 3) {
-                    line += ".****";
-                } else {
-                    line += ".....";
-                }
-            } else if (digit == '3') {
-                if (row == 0) {
-                    line += ".....";
-                } else if (row == 1) {
-                    line += "****.";
-                    } else if (row == 2) {
-                    line += ".....";
-                    } else if (row == 3) {
-                    line += "****.";
-                    } else {
-                    line += ".....";
-                    }
-                }
-            }
-        cout << line << endl;
-    }
-     return 0;
+    int a = 10;       // 定义整型变量 a，初始化为 10
+    int *p = &a;      // 定义指针 p，指向 a 的地址
+    int *&q = p;      // 定义 q 是 p 的引用（即 q 是 p 的别名）
+    *q = 20;          // 通过 q 修改 p 指向的值（即 a）
+    cout << a << endl; // 输出 a 的值
+    return 0;
 }
           

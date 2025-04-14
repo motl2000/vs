@@ -1,4 +1,5 @@
 //【例6.1】排队接水
+//思路：接水用时最少得先接水，使得总用时最少。
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
@@ -20,7 +21,7 @@ int main(){
     int sum=0;
     for (int i=1;i<=n;i++){
         cout<<a[i].num<<' ';
-        sum+=a[i].time*(n-i);       
+        sum+=a[i].time*(n-i);       //计算总时间，乘以n-i是表示后i人的等待时间
     }
     //输出平均时间，保留两位小数
     cout<<endl<<fixed<<setprecision(2)<<(double)sum/n;

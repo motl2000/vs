@@ -9,7 +9,7 @@ int main(){
     for (int i=0;i<n;i++){
         int min=0x7fffffff;
         int k=0;
-        for (int j=0;j<m;j++)       //找到用时最少得水龙头
+        for (int j=0;j<m;j++)       //找到用时最少得水龙头,就是下一个要换人的水龙头
             if (s[j]<min){          
                 min=s[j];
                 k=j;
@@ -18,7 +18,7 @@ int main(){
                 
     }
     int max=0;
-    for (int i=0;i<m;i++){          //找到用时最多的水龙头，就是接水的最少总用时
+    for (int i=0;i<m;i++){          //找到用时最多的水龙头，就是接水的总用时
         if (s[i]>max)
             max=s[i];   
     }
