@@ -15,6 +15,7 @@ void print(){
     cout<<endl;
     step++;
 }
+
 void init(int n){
     int i;
     step=0;
