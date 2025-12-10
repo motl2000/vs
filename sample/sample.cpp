@@ -1,16 +1,23 @@
-#include <iostream>
-#include <vector>
+#include <cstdio>
 #include <algorithm>
 using namespace std;
+const int N = 1e5 + 5;
+int n, q, a[N], g;
+int gcd(int a, int b)
+{
+    if (a == 0 || b == 0)
+        return a + b;
+    return gcd(b, a % b);
+}
 int main()
 {
-	vector<int> v = {1, 1, 0, 0};
-	do {
-		// 输出当前排列
-		for (int i = 0; i < v.size(); i++) {
-			cout << v[i] << " ";
-		}
-		cout << endl;
-	} while (next_permutation(v.begin(), v.end()));
-	return 0;
+    scanf("%d%d", &n, &q);
+    for (int i = 1; i <= n; i++)
+        scanf("%d", &a[i]);
+    sort(a + 1, a + n + 1);
+    for (int i = 2; i <= n; i++)
+        g = gcd(g, a[i] - a[i - 1]);
+    for (int i = 1; i <= q; i++)
+        printf("%d\n", gcd(g, a[1] + i));
+    return 0;
 }
