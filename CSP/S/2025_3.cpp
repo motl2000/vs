@@ -13,6 +13,13 @@ int hash(int x, int y)  //将两个整数编码成一个唯一的哈希值
 {
     return (x * 400 % V + y + 1145) % V;
 }
+/**
+ * @brief 检查从节点x出发，标签为y的边是否存在
+ * 
+ * @param x 起始节点
+ * @param y 边的标签
+ * @return int 如果边存在则返回边的值，否则返回0
+ */
 int find(int x, int y)  //检查从节点 x 出发，标签为 y 的边是否存在
 {
     int H = hash(x, y) % V;

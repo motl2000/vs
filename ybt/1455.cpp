@@ -1,4 +1,5 @@
 //1455：【例题1】Oulipo
+//核心思想：多项式哈希 + 滚动窗口
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -22,10 +23,11 @@ int main() {
         /* 计算 pat 的哈希 
             例： pat="ABA" ，base=131
             hp = 'A' * 131² + 'B' * 131¹ + 'A' * 131⁰ 
+            131 是一个不大不小的质数，经过竞赛实践验证，能在计算效率和冲突率之间取得最佳平衡。
             由于值太大，用  unsigned long long  自然溢出，等价于自动取模 2⁶⁴。
         */
         ull hp = 0;
-        for (char c : pat) 
+        for (char c : pat) //滚动求哈希值，hp(i) = hp(i-1) * base + pat[i]
             hp = hp * base + c;
 
         /* 滚动哈希扫描目标串中第一段长度为 m 的文本串*/
